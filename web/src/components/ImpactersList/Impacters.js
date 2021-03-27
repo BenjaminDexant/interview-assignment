@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles/Impacters.css';
 
-const Impacters = ({id, name, handleClick}) => {
+const Impacters = ({id, name}) => {
   return (
     <button
       className="Impacter-button"

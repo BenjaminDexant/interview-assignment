@@ -6,3 +6,22 @@
   flex-direction: column;
   background-color: whitesmoke;
 }
+
+.header {
+  height: 50px;
+  background-color: yellow;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.impactersList {
+  width: 20%;
+}
+
+.footer {
+  height: 50px;
+  background-color: yellow;
+}

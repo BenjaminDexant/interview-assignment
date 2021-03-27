@@ -7,13 +7,13 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <div className="Header" />
-      <div className="Body">
-        <div className="ImpactersList">
+      <div className="header" />
+      <div className="body">
+        <div className="impactersList">
           <ImpactersList />
         </div>
       </div>
-      <div className="Footer" />
+      <div className="footer" />
     </div>
   );
 };
