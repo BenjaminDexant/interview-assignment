@@ -7,7 +7,7 @@ import './styles/ImpacterResume.css';
 
 const proxy = 'http://localhost:3001';
 
-const Impacters = () => {
+const ImpacterResume = () => {
   const appState = useContext(appContext);
 
   let a = '';
@@ -39,4 +39,4 @@ const Impacters = () => {
   );
 };
 
-export default Impacters;
+export default ImpacterResume;
