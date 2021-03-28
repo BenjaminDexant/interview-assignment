@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import AppProvider from "./context/appContext/ContextProvider";
+import AppProvider from './context/appContext/ContextProvider';
+import ModalProvider from './context/modalContext/ContextProvider';
 
 ReactDOM.render(
   <AppProvider>
-    <App />
+    <ModalProvider>
+      <App />
+    </ModalProvider>
   </AppProvider>,
   document.getElementById('root'),
 );

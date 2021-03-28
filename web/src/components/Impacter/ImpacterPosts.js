@@ -9,7 +9,7 @@ import './styles/ImpacterPosts.css';
 
 const proxy = 'http://localhost:3001';
 
-const ImpacterPosts = () => {
+const ImpacterPosts = ({setModal, modal}) => {
   const [render, setRender] = useState(false);
   const appState = useContext(appContext);
 
@@ -46,6 +46,9 @@ const ImpacterPosts = () => {
             impacter_id={data.impacter_id}
             data={data.data}
             key={data.id}
+            setModal={setModal}
+            modal={modal}
+            index={index}
           />
         ))}
       </div>

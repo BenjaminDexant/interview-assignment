@@ -4,6 +4,7 @@ import ImpactersList from './components/ImpactersList/ImpactersList';
 import ImpacterResume from './components/Impacter/ImpacterResume';
 import ImpacterPosts from './components/Impacter/ImpacterPosts';
 import MenuBurger from './components/header/MenuBurger';
+import Modal from './components/modal/Modal';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ import closeIcon from './icon/close.svg';
 
 const App = () => {
   const [open, setOpen] = useState(false);
+  const [modal, setModal] = useState(false);
   return (
     <div className="App">
       <div className="header">
@@ -42,9 +44,10 @@ const App = () => {
         </div>
         <div className="impacter">
           <ImpacterResume className="impacterResume" />
-          <ImpacterPosts className="impacterPosts" />
+          <ImpacterPosts className="impacterPosts" setModal={setModal} modal={modal} />
         </div>
       </div>
+      {modal ? <Modal setModal={setModal} modal={modal} /> : null}
       <div className="footer" />
     </div>
   );
