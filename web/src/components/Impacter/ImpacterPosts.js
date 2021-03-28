@@ -12,7 +12,7 @@ const proxy = 'http://localhost:3001';
 const ImpacterPosts = () => {
   const appState = useContext(appContext);
 
-  let a = '';
+  let a;
   if (appState.state) {
     if (appState.state.impacterId) {
       a = appState.state.impacterId;
@@ -21,11 +21,15 @@ const ImpacterPosts = () => {
 
   const [posts, setPosts] = useState([]);
 
+  console.log(typeof a);
+
   useEffect(() => {
-    axios
-      .get(`${proxy}/impacters/${a}/posts`)
-      .then((res) => res.data)
-      .then((data) => setPosts(data));
+    if (typeof a === 'string') {
+      axios
+        .get(`${proxy}/impacters/${a}/posts`)
+        .then((res) => res.data)
+        .then((data) => setPosts(data));
+    }
   }, [a]);
 
   return (

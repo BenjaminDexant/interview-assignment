@@ -10,7 +10,7 @@ const proxy = 'http://localhost:3001';
 const ImpacterResume = () => {
   const appState = useContext(appContext);
 
-  let a = '';
+  let a;
   if (appState.state) {
     if (appState.state.impacterId) {
       a = appState.state.impacterId;
@@ -20,10 +20,12 @@ const ImpacterResume = () => {
   const [impacter, setImpacter] = useState({});
 
   useEffect(() => {
-    axios
-      .get(`${proxy}/impacters/${a}`)
-      .then((res) => res.data)
-      .then((data) => setImpacter(data));
+    if (typeof a === 'string') {
+      axios
+        .get(`${proxy}/impacters/${a}`)
+        .then((res) => res.data)
+        .then((data) => setImpacter(data));
+    }
   }, [a]);
 
   return (
@@ -31,7 +33,7 @@ const ImpacterResume = () => {
       <div className="impacterResume-name">{impacter.name}</div>
       <img
         src={impacter.profile_image}
-        alt="impacter image"
+        alt={`impacter ${impacter.name}`}
         className="impacterResume-img"
       />
       <div className="impacterResume-bio">{impacter.bio}</div>

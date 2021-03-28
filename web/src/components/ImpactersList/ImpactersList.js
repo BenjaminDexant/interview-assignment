@@ -22,7 +22,7 @@ const ImpactersList = () => {
         <Impacters
           id={data.id}
           name={data.name}
-          key={index}
+          key={data.id}
         />
       ))}
     </div>
