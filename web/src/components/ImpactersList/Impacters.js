@@ -8,6 +8,13 @@ const Impacters = ({id, name}) => {
   const appState = useContext(appContext);
   const {dispatch} = appState;
 
+  let a;
+  if (appState.state) {
+    if (appState.state.impacterId) {
+      a = appState.state.impacterId;
+    }
+  }
+
   const handleClick = (id) => {
     dispatch({
       type: 'setImpacter',
@@ -17,7 +24,7 @@ const Impacters = ({id, name}) => {
 
   return (
     <button
-      className="impacter-button"
+      className={id === a ? 'impacter-button current-value' : 'impacter-button'}
       name="impacter"
       type="button"
       onClick={() => handleClick(id)}>

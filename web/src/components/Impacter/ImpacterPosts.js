@@ -10,6 +10,7 @@ import './styles/ImpacterPosts.css';
 const proxy = 'http://localhost:3001';
 
 const ImpacterPosts = () => {
+  const [render, setRender] = useState(false);
   const appState = useContext(appContext);
 
   let a;
@@ -21,31 +22,36 @@ const ImpacterPosts = () => {
 
   const [posts, setPosts] = useState([]);
 
-  console.log(typeof a);
-
   useEffect(() => {
     if (typeof a === 'string') {
       axios
         .get(`${proxy}/impacters/${a}/posts`)
         .then((res) => res.data)
         .then((data) => setPosts(data));
+      setRender(true);
     }
+    return () => {
+      setRender(false);
+    };
   }, [a]);
 
-  return (
-    <div className="impacterPosts-container">
-      {posts.map((data, index) => (
-        <Post
-          id={data.id}
-          type={data.type}
-          description={data.description}
-          impacter_id={data.impacter_id}
-          data={data.data}
-          key={data.id}
-        />
-      ))}
-    </div>
-  );
+  if (render) {
+    return (
+      <div className="impacterPosts-container">
+        {posts.map((data, index) => (
+          <Post
+            id={data.id}
+            type={data.type}
+            description={data.description}
+            impacter_id={data.impacter_id}
+            data={data.data}
+            key={data.id}
+          />
+        ))}
+      </div>
+    );
+  }
+  return null;
 };
 
 export default ImpacterPosts;

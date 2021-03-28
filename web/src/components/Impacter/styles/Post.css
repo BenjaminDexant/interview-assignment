@@ -1,0 +1,18 @@
+.post-container {
+    margin-top: 10px;
+    background-color: rgb(231, 231, 231);
+    padding: 5px;
+    width: 40%;
+}
+
+.post-description {
+    font-size: 1.5vw;
+}
+
+.post-img {
+    height: 4vw;
+}
+
+.post-descriptionMedia {
+    font-size: 1vw;
+}

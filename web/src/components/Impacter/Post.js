@@ -7,13 +7,13 @@ const Post = ({id, type, description, impacter_id, data}) => {
     <div className="post-container">
       <div className="post-description">{description}</div>
       {data.media.map((m, index) => (
-        <div key={m.id}>
+        <div key={index}>
           <img
             src={m.image}
-            alt={`impacter ${m.id}`}
-            className="impacterResume-img"
+            alt={`impacter ${m.description}`}
+            className="post-img"
           />
-          <div className="post-descriptionMedia">{m.description}</div>
+          <div className="post-descriptionMedia">{m.description} - {m.version}</div>
         </div>
       ))}
     </div>

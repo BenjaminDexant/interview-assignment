@@ -1,2 +1,14 @@
 .impacter-button {
+    margin-top: 1px;
+    margin-right: 10px;
+}
+
+.impacter-button:hover {
+    font-size: 2vw;
+    margin-right: 0px;
+    margin-left: 10px;
+}
+
+.current-value {
+    background-color: yellow;
 }
