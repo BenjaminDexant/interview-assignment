@@ -1,22 +1,30 @@
-import React, {useContext} from 'react';
-
-import modalContext from '../../context/modalContext/modalContext';
+import React from 'react';
 
 import './styles/modal.css';
 
-const Modal = ({setModal, modal}) => {
-  const modalState = useContext(modalContext);
-  // const {dispatchModal} = modalState;
-
+const Modal = ({setModal, modal, posts, modalIndex, setModalIndex}) => {
   const hideModal = () => {
     setModal(false);
+  };
+
+  const nextPost = (index) => {
+    const newIndex = index + 1;
+    if (newIndex < posts.length) {
+      setModalIndex(newIndex);
+    }
+  };
+  const previousPost = (index) => {
+    const newIndex = index - 1;
+    if (newIndex >= 0) {
+      setModalIndex(newIndex);
+    }
   };
 
   return (
     <div className="modal-blur">
       <div className="modal-container">
-        <div className="modal-description">{modalState.state.description}</div>
-        {modalState.state.data.media.map((m, index) => (
+        <div className="modal-description">{posts[modalIndex].description}</div>
+        {posts[modalIndex].data.media.map((m, index) => (
           <div key={index}>
             <img
               src={m.image}
@@ -34,6 +42,20 @@ const Modal = ({setModal, modal}) => {
           type="button"
           onClick={() => hideModal()}>
           Close
+        </button>
+        <button
+          className="modal-previousButton"
+          name="previous"
+          type="button"
+          onClick={() => previousPost(modalIndex)}>
+          Previous
+        </button>
+        <button
+          className="modal-nextButton"
+          name="next"
+          type="button"
+          onClick={() => nextPost(modalIndex)}>
+          Next
         </button>
       </div>
     </div>

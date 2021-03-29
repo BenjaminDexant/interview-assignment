@@ -1,22 +1,11 @@
-import React, {useContext} from 'react';
-
-import modalContext from '../../context/modalContext/modalContext';
+import React from 'react';
 
 import './styles/Post.css';
 
-const Post = ({id, type, description, impacter_id, data, setModal, modal}) => {
-  const modalState = useContext(modalContext);
-  const {dispatchModal} = modalState;
+const Post = ({id, type, description, impacter_id, data, setModal, modal, index, setModalIndex}) => {
 
-  const showModal = () => {
-    dispatchModal({
-      type: 'setModal',
-      id,
-      payload: type,
-      description,
-      impacter_id,
-      data,
-    });
+  const showModal = index => {
+    setModalIndex(index)
     setModal(true);
   };
   return (
@@ -38,7 +27,7 @@ const Post = ({id, type, description, impacter_id, data, setModal, modal}) => {
         className="post-modalButton"
         name="modal"
         type="button"
-        onClick={() => showModal()}>
+        onClick={() => showModal(index)}>
         Voir
       </button>
     </div>

@@ -9,7 +9,7 @@ import './styles/ImpacterPosts.css';
 
 const proxy = 'http://localhost:3001';
 
-const ImpacterPosts = ({setModal, modal}) => {
+const ImpacterPosts = ({setModal, modal, setPosts, posts, setModalIndex}) => {
   const [render, setRender] = useState(false);
   const appState = useContext(appContext);
 
@@ -19,8 +19,6 @@ const ImpacterPosts = ({setModal, modal}) => {
       a = appState.state.impacterId;
     }
   }
-
-  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     if (typeof a === 'string') {
@@ -33,7 +31,7 @@ const ImpacterPosts = ({setModal, modal}) => {
     return () => {
       setRender(false);
     };
-  }, [a]);
+  }, [a, setPosts]);
 
   if (render) {
     return (
@@ -49,6 +47,7 @@ const ImpacterPosts = ({setModal, modal}) => {
             setModal={setModal}
             modal={modal}
             index={index}
+            setModalIndex={setModalIndex}
           />
         ))}
       </div>

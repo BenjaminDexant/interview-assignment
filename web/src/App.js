@@ -14,6 +14,9 @@ import closeIcon from './icon/close.svg';
 const App = () => {
   const [open, setOpen] = useState(false);
   const [modal, setModal] = useState(false);
+  const [modalIndex, setModalIndex] = useState("")
+  const [posts, setPosts] = useState([]);
+
   return (
     <div className="App">
       <div className="header">
@@ -44,10 +47,10 @@ const App = () => {
         </div>
         <div className="impacter">
           <ImpacterResume className="impacterResume" />
-          <ImpacterPosts className="impacterPosts" setModal={setModal} modal={modal} />
+          <ImpacterPosts className="impacterPosts" setModal={setModal} modal={modal} setPosts={setPosts} posts={posts} setModalIndex={setModalIndex} />
         </div>
       </div>
-      {modal ? <Modal setModal={setModal} modal={modal} /> : null}
+      {modal ? <Modal setModal={setModal} modal={modal} posts={posts} modalIndex={modalIndex} setModalIndex={setModalIndex} /> : null}
       <div className="footer" />
     </div>
   );
