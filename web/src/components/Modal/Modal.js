@@ -12,25 +12,25 @@ const Modal = ({setModal, modal, posts, modalIndex, setModalIndex}) => {
 
   const modifyPost = (data) => {
     const {type, description} = data;
-    axios
-      .put(`${proxy}/posts/${posts[modalIndex].id}`, {
-        type,
-        description,
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (window.confirm('Are you sure you wish to modify this post?')) {
+      axios
+        .put(`${proxy}/posts/${posts[modalIndex].id}`, {
+          type,
+          description,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
 
   const deletePost = (id) => {
-    axios
-      .delete(`${proxy}/posts/${id}`)
-      .then((response) => {
-        console.log(response);
-      });
+    axios.delete(`${proxy}/posts/${id}`).then((response) => {
+      console.log(response);
+    });
   };
 
   const hideModal = () => {
@@ -98,7 +98,10 @@ const Modal = ({setModal, modal, posts, modalIndex, setModalIndex}) => {
           className="modal-deleteButton"
           name="delete"
           type="button"
-          onClick={() => deletePost(posts[modalIndex].id)}>
+          onClick={(e) => {
+            if (window.confirm('Are you sure you wish to delete this post?'))
+              deletePost(posts[modalIndex].id);
+          }}>
           Delete post!
         </button>
         {modifyWindow ? (
