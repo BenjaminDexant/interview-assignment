@@ -25,6 +25,14 @@ const Modal = ({setModal, modal, posts, modalIndex, setModalIndex}) => {
       });
   };
 
+  const deletePost = (id) => {
+    axios
+      .delete(`${proxy}/posts/${id}`)
+      .then((response) => {
+        console.log(response);
+      });
+  };
+
   const hideModal = () => {
     setModal(false);
   };
@@ -85,6 +93,13 @@ const Modal = ({setModal, modal, posts, modalIndex, setModalIndex}) => {
           type="button"
           onClick={() => setModifyWindow(true)}>
           Modify
+        </button>
+        <button
+          className="modal-deleteButton"
+          name="delete"
+          type="button"
+          onClick={() => deletePost(posts[modalIndex].id)}>
+          Delete post!
         </button>
         {modifyWindow ? (
           <form onSubmit={handleSubmit(modifyPost)}>
