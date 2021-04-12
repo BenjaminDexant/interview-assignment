@@ -1,22 +1,133 @@
-.App {
-  text-align: center;
+@media (min-width: 769px) {
+  .App {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+  }
+
+  .header {
+    height: 50px;
+    background-color: yellow;
+  }
+
+  .header-menuBurger {
+    display: none;
+  }
+
+  .menuBurger {
+    display: none;
+  }
+
+  .body {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .impactersList {
+    width: 20%;
+  }
+
+  .impacter {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .impacterResume {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .impacterPosts {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    height: 50px;
+    background-color: yellow;
+  }
 }
 
-.App-logo {
-  height: 40vmin;
-}
+@media (max-width: 768px) {
+  .App {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  .header {
+    height: 50px;
+    background-color: yellow;
+  }
 
-.App-link {
-  color: #09d3ac;
+  .header-menuBurger {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 10%;
+    height: 5%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+  }
+
+  .header-menuBurgerIcon {
+    height: 6vw;
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  .body {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .impactersList {
+    display: none;
+  }
+
+  .impacter {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .impacterResume {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .impacterPosts {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    height: 50px;
+    background-color: yellow;
+  }
 }

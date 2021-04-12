@@ -1,0 +1,69 @@
+.modal-blur {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  width: 98%;
+  height: 98%;
+  background: rgba(128, 128, 128, 0.5);
+  border: none;
+  padding: 0;
+  z-index: 10;
+}
+
+.modal-container {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  background: whitesmoke;
+  border: solid black;
+  padding: 1vw;
+  z-index: 11;
+}
+
+@media (min-width: 769px) {
+  .modal-description {
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+  }
+  .modal-img {
+    height: 15vw;
+  }
+
+  .modal-descriptionMedia {
+    font-size: 1vw;
+  }
+
+  .modal-closeButton {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      font-size: 0.8vw;
+      background-color: yellow;
+  }
+}
+
+@media (max-width: 768px) {
+    .modal-description {
+        font-size: 5vw;
+        margin-bottom: 4vw;
+        margin-right: 10vw;
+    }
+    
+    .modal-img {
+        height: 35vw;
+    }
+    
+    .modal-descriptionMedia {
+        font-size: 2.2vw;
+    }
+
+    .modal-closeButton {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        font-size: 3vw;
+        background-color: yellow;
+      }  
+}

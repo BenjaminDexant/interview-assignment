@@ -73,3 +73,34 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Trades off & decisons, stuff left out, todo list
+
+I've chosen the web app because it is with React I spent most of my time
+I would have choose back end because i know how to test routes but ive never use graphQL
+
+Learn to use Jest properly
+Was the first time for me using that API. After half a day reading the doc then I've made the decision to start coding anyway (i need to see real example of front-end tests)
+
+I've made a basic wireframe for myself, this helped me to make basic mobile and desktop designs
+
+Tried to anticipate the use cases and the users actions following the readme assignments
+Didnt want to write dumb functions to just scale the assigments but instead make a POC of a website following the backgroung given
+
+Used context API with reducer to help adding more feature in the futur
+
+I was wondering about using react router and query strings params for axios but in my opinion it is not needed for now, maybe in the futur if the app grow bigger
+
+TODO list :
+- Update the medias datas in posts. For now it is possible to update only the description and the type of the post itself not the medias part.
+- Upload and post new image as suggest the assignement.
+- Position modal sticky. I did set an absolute position to achieve assignment quicker.
+- Add update and delete features in the posts list (not only in modal mode)
+- Add tests following user actions
+- Add tests to ckeck typeof and data(s) of states
+- CSS upgrade
+- Authentication. Any user can modify or delete anything.
+
+
+
+

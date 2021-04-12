@@ -1,0 +1,40 @@
+.post-container {
+    margin-top: 10px;
+    background-color: rgb(231, 231, 231);
+    padding: 5px;
+}
+
+@media (min-width: 769px) {
+    .post-container {
+        width: 40%;
+    }
+    .post-description {
+        font-size: 1.5vw;
+    }
+    
+    .post-img {
+        height: 6vw;
+    }
+    
+    .post-descriptionMedia {
+        font-size: 1vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-container {
+        width: 90%;
+    }
+    .post-description {
+        font-size: 3vw;
+    }
+    
+    .post-img {
+        height: 10vw;
+    }
+    
+    .post-descriptionMedia {
+        font-size: 2.5vw;
+    }
+}
+
